@@ -161,6 +161,7 @@
             this.buttonBetoltes.TabIndex = 13;
             this.buttonBetoltes.Text = "Betöltés";
             this.buttonBetoltes.UseVisualStyleBackColor = true;
+            this.buttonBetoltes.Click += new System.EventHandler(this.buttonBetoltes_Click);
             // 
             // listBoxHobbik
             // 

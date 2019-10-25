@@ -46,5 +46,32 @@ namespace RegisztracioAlkalmazas
         {
             listBoxHobbik.Items.Add(textBoxUjHobbi.Text);
         }
+
+        private void buttonBetoltes_Click(object sender, EventArgs e)
+        {
+            string[] tomb = File.ReadAllLines("regisztracio.txt");
+            textBoxNev.Text = tomb[0];
+            textBoxSzulDatum.Text = tomb[1];
+            if (tomb[2] == "Férfi")
+            {
+                radioButtonFerfi.Checked = true;
+            }
+            else
+            {
+                radioButtonNo.Checked = true;
+            }
+            for (int i = 3; i < tomb.Length; i++)
+            {
+                if (!listBoxHobbik.Items.Contains(tomb[3]))
+                {
+                    listBoxHobbik.Items.Add(tomb[3]);
+                    listBoxHobbik.SelectedItem = tomb[3];
+
+                }
+                else {
+                    listBoxHobbik.SelectedItem = tomb[3];
+                }
+            }
+        }
     }
 }
