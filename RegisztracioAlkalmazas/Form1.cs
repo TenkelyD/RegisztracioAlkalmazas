@@ -41,5 +41,10 @@ namespace RegisztracioAlkalmazas
             
             txt.Close();
         }
+
+        private void buttonHozzaad_Click(object sender, EventArgs e)
+        {
+            listBoxHobbik.Items.Add(textBoxUjHobbi.Text);
+        }
     }
 }
